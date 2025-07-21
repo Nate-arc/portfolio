@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naorit Creations</title>
+  <style>
+    :root {
+      --primary-color: saddlebrown;
+      --primary-dark: #5c3317;
+      --background: #fdfaf6;
+      --text-color: #333;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--background);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1em;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffddaa;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 60px;
+      padding: 30px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-4px);
+    }
+
+    h2 {
+      color: var(--primary-color);
+    }
+
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      margin-top: 20px;
+      padding-bottom: 10px;
+    }
+
+    .gallery::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .gallery::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 4px;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      max-width: 500px;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    form button {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: var(--primary-dark);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Naorit Creations</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Naorit Creations</h2>
+      <p>At Naorit Creations, we craft unique and elegant fascinators for every occasion. Whether you're attending a wedding, church event, or special celebration, our designs help you stand out with style and confidence.</p>
+    </section>
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="fascinator1.jpg" alt="Fascinator Design 1">
+        <img src="fascinator2.jpg" alt="Fascinator Design 2">
+        <img src="fascinator3.jpg" alt="Fascinator Design 3">
+        <img src="fascinator4.jpg" alt="Fascinator Design 4">
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Naorit Creations. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for reaching out to Naorit Creations! We will get back to you soon.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
